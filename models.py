@@ -3,13 +3,12 @@ from dataclasses import dataclass
 from utils import calc_pixel_brightness
 
 
-@dataclass(frozen=True)
 class Pixel:
-    red: float
-    green: float
-    blue: float
 
-    def __post_init__(self):
+    def __init__(self, red: float, green: float, blue: float):
+        self.red = red
+        self.green = green
+        self.blue = blue
         self.validate()
 
     def validate(self):
