@@ -1,3 +1,5 @@
+from statistics import mean
+
 from utils import calc_pixel_brightness
 
 
@@ -11,7 +13,7 @@ pixel_brightness = calc_pixel_brightness(pixel[0], pixel[1], pixel[2])
 pixel_brightness2 = calc_pixel_brightness(pixel2[0], pixel2[1], pixel2[2])
 
 
-mean_brightness = (pixel_brightness + pixel_brightness2) / 2
+mean_brightness = mean([pixel_brightness, pixel_brightness2])
 print(mean_brightness)
 
 
