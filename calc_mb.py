@@ -4,25 +4,16 @@ from typing import List, NamedTuple
 
 from utils import calc_pixel_brightness
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
-
+@dataclass(frozen=False)
 class Pixel:
-
-    def __init__(self, red = None, green = None, blue = None):
-        self.red = red if red is not None else []
-        self.green = green if green is not None else []
-        self.blue = blue if blue is not None else []
-
-    def __add__(self, other):  # dunder methods
-        return self.red + other.red
-
-    def __str__(self):
-        return f"Pixel(red={self.red}, green={self.blue}, blue={self.green})"
+    red: List = field(repr=False, default_factory=list)
+    green: List = field(default_factory=list)
+    blue: List = field(default_factory=list)
 
 pixel = Pixel()
-pixel.red.append(1)
-pixel.red.append(2)
+pixel.red = [2, 3, 4]
 
 
 pixel2 = Pixel()
