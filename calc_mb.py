@@ -10,9 +10,12 @@ blue2 = 0
 readiness = 0  # Readiness value
 readiness2 = 200
 
+def get_pixel_brightness(r, g, b):
+    return (r + g + b) / 3
+
 # Get pixel brightnesses
-pixel_brightness = (red + green + blue) / 3
-pixel_brightness2 = (red2 + green2 + blue2) / 3
+pixel_brightness = get_pixel_brightness(red, green, blue)
+pixel_brightness2 = get_pixel_brightness(red2, green2, blue2)
 
 
 # Get mean brightness
