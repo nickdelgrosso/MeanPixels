@@ -10,7 +10,8 @@ class Pixel:
     green: float
     blue: float
 
-    def get_brightness(self):
+    @property
+    def brightness(self):
         return calc_pixel_brightness(r=self.red, g=self.green, b=self.blue)
 
 
@@ -18,8 +19,5 @@ class Pixel:
 pixel = Pixel(100, 0, 0)
 pixel2 = Pixel(red=50, green=100, blue=0)
 
-pixel_brightness = pixel.get_brightness()
-pixel_brightness2 = pixel2.get_brightness()
-
-mean_brightness = mean([pixel_brightness, pixel_brightness2])
+mean_brightness = mean([pixel.brightness, pixel2.brightness])
 print(mean_brightness)
