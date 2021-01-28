@@ -8,3 +8,4 @@ pixel2 = Pixel(red=50, green=100, blue=0)
 
 mean_brightness = mean([pixel.brightness, pixel2.brightness])
 print(mean_brightness)
+print("Done!")
