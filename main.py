@@ -1,3 +1,4 @@
+import numpy
 from statistics import mean
 
 from models import Pixel
